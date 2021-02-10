@@ -22,10 +22,10 @@ function Landing({ drizzle, drizzleState, drizzleStatus, account, networkId }) {
     if (networkId) {
       setCurrentNetwork(networkId);
     }
-    if (!drizzleStatus.initialized && window.web3 && drizzle !== null) {
-      window.web3.version.getNetwork((error, networkId) => {
+    if (!drizzleStatus.initialized && window.ethereum && drizzle !== null) {
+      //web3.version.getNetwork((error, networkId) => {
         setCurrentNetwork(parseInt(networkId));
-      });
+      //});
     }
   }, [networkId, drizzleStatus, drizzle]);
 
